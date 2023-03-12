@@ -64,8 +64,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.humanize',
     'django_extensions',
-    'rest_framework',
-    'rest_framework.authtoken',
 
     'allauth',
     'allauth.account',
@@ -73,11 +71,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     'debug_toolbar',
 
-    'api',
     'products',
     'orders',
     'users',
-
 ]
 
 MIDDLEWARE = [
@@ -236,12 +232,3 @@ CELERY_RESULT_BACKEND = f'redis://{REDIS_HOST}:{REDIS_PORT}'
 STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
 STRIPE_WEBHOOK_SECRET = env('STRIPE_WEBHOOK_SECRET')
-
-# DRF
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 2,
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-            'rest_framework.authentication.TokenAuthentication',
-        ],
-}

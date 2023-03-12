@@ -66,7 +66,6 @@ class UserProfileView(TitleMixin, UpdateView):
         return reverse_lazy('users:profile', args=(self.object.id,))
 
 
-
 # @login_required
 # def profile(request):
 #     if request.method == 'POST':
